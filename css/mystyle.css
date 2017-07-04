@@ -1,0 +1,56 @@
+.card {
+	    height: 180px;
+	    width: 310px;
+	    background-color: black;
+	    margin: auto;
+	    display: inline-block;
+	    margin-right: 5px;
+	    margin-bottom: 5px;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	}
+	.cardOk {
+		height: 180px;
+	    width: 310px;
+		background-color: black;
+		margin: auto;
+		display: inline-block;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.bottommarg {
+		margin-bottom: 10px;
+		margin-right: 10px;
+	}
+	#tiles {
+		/* max-width: 940px; */
+		width: 100%;
+		margin:auto;
+	}
+	.numbers {
+		font-size: 28px;
+		color: white;
+		pointer-events: none;
+	}
+	[data-card="1"].image, [data-card="1"].cardOk  {
+  		background-image: url('../img/1.jpg')
+	}
+	[data-card="2"].image, [data-card="2"].cardOk  {
+  		background-image: url('../img/2.jpg')
+	}
+	[data-card="3"].image, [data-card="3"].cardOk  {
+  		background-image: url('../img/3.jpg')
+	}
+	[data-card="4"].image, [data-card="4"].cardOk  {
+  		background-image: url('../img/4.jpg')
+	}
+	[data-card="5"].image, [data-card="5"].cardOk  {
+  		background-image: url('../img/5.jpg')
+	}
+	[data-card="6"].image, [data-card="6"].cardOk {
+  		background-image: url('../img/6.jpg')
+	}
