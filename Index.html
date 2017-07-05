@@ -11,26 +11,22 @@
 
 
 <body id="body">
-	<div class="container text-center" >
-			<div class="col-md-12 text-center">
+<div id="overlay" style="display: none;"></div>
+<div id='youWin' style="display: none"></div>
+
+	<div id="contain" class="container text-center allin" >
+			<div class="col-md-12 text-center" style="z-index: 99">
 				<h3 class="title">Memmory Game of mine</h3>
+				<button onclick="difficulty(6);" class="btn buttons" >Easy</button>
+				<button onclick="difficulty(9);" class="btn buttons" >Medium</button>
+				<button onclick="difficulty(12);" class="btn buttons" >Hard</button>
+				<span id="failcounter">0</span>
 			</div>
-			<div id='tiles' class="text-center">
-				<div data-card="1" class='card'><span class='numbers'>1 </span></div>	
-				<div data-card="1" class='card'><span class='numbers'>1 </span></div>
-				<div data-card="2" class='card'><span class='numbers'>2 </span></div>
-				<div data-card="2" class='card'><span class='numbers'>2 </span></div>
-				<div data-card="3" class='card'><span class='numbers'>3 </span></div>
-				<div data-card="3" class='card'><span class='numbers'>3 </span></div>
-				<div data-card='4' class='card'><span class='numbers'>4 </span></div>
-				<div data-card='4' class='card'><span class='numbers'>4 </span></div>
-				<div data-card='5' class='card'><span class='numbers'>5 </span></div>
-				<div data-card='5' class='card'><span class='numbers'>5 </span></div>
-				<div data-card='6' class='card'><span class='numbers'>6 </span></div>
-				<div data-card='6' class='card'><span class='numbers'>6 </span></div>
-			</div>
+			<div id='tiles' class="text-center"></div>
 	</div>
 		
+
+
 
 
 
