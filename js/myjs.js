@@ -45,12 +45,12 @@ MemoryGame.constructCards = function (num){
 				MemoryGame.cardDivs = document.createElement('div');
 					MemoryGame.cardDivs.classList.add(cardBackValue , 'card');
 					MemoryGame.cardDivs.setAttribute('data-card',m);
-					// MemoryGame.cardDivs.innerHTML = m;  // Help for the game
+					MemoryGame.cardDivs.innerHTML = m;  // Help for the game
 					console.log(m);
 				MemoryGame.cardDivs2 = document.createElement('div');
 					MemoryGame.cardDivs2.classList.add(cardBackValue , 'card');
 					MemoryGame.cardDivs2.setAttribute('data-card',m);
-					// MemoryGame.cardDivs2.innerHTML = m;  // Help for the game
+					MemoryGame.cardDivs2.innerHTML = m;  // Help for the game
 					console.log(m);
 					MemoryGame.myArray.push(MemoryGame.cardDivs);
 					MemoryGame.myArray.push(MemoryGame.cardDivs2);
@@ -104,6 +104,8 @@ MemoryGame.userInput = function () {
 		MemoryGame.Card1 = new MemoryGame.Cards (MemoryGame.data,MemoryGame.firstItem); 
 	    MemoryGame.guesss.push(MemoryGame.Card1);
 	    MemoryGame.clickCounter++ // going for the second click
+
+
 	
 	// Second click
 	} else if (MemoryGame.clickCounter == 2) {
@@ -137,6 +139,7 @@ MemoryGame.finalCheck = function () {
 		MemoryGame.pause = false
 
 		if (document.getElementsByClassName('card').length == 0 ){
+			window.scrollTo(0, 0);
 			winning.style.display = 'block';
 			document.body.style.overflow = "hidden";
 		}
@@ -153,7 +156,8 @@ MemoryGame.finalCheck = function () {
 	document.getElementById('failcounter').innerHTML = failCounter + '';
 	}
 
-document.getElementById('again').addEventListener('click',function(){window.scrollTo(500, 0);document.body.style.overflow = "scroll";
+document.getElementById('again').addEventListener('click',function(){
+	document.body.style.overflow = "scroll";
 	winning.style.display = 'none';
 	MemoryGame.constructCards();})
 
