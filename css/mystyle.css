@@ -1,9 +1,8 @@
-.card {
+	  .card {
 	    height: 230px;
 	    width: 170px;
 	    color:white;
 	    font-size: 24px;
-	    background-image: url('../img/back.gif');
 	    margin: auto;
 	    display: inline-block;
 	    margin-right: 50px;
@@ -16,16 +15,81 @@
 	    margin-left: 50px;
 	    transform: rotateY(0deg);
 	    transition: all 0.8s ease;
-	    
 	}
+
+	#failcounter {
+	    margin-left: 15px;
+    	    margin-right: 15px;
+    	    font-size: 22px;
+	}
+
+	#cardbackSelector {
+	    background-color: rgb(253, 253, 253);
+	    border-width: 1px;
+	    border-style: dashed;
+	    border-color: rgb(0, 0, 0);
+	    border-image: initial;
+	    border-radius: 0;
+	    margin: 20px;
+	    -webkit-appearance: none;
+	    -webkit-border-radius: 0px;
+	    outline-width: 0;
+	    padding: 10px 10px 10px 5px;
+	    display: block;
+	    width: 10em;
+	    display: inline-block;
+	}
+
+	.btn {
+	    background-color: white;
+	    border: dashed;
+	    border-width: 1px;
+	    padding: 12px;
+	    width: 100px;
+	    border-color: black;
+	    border-radius: 0;
+	}
+
+	#themeSelector {
+	    background-color: rgb(253, 253, 253);
+	    border-width: 1px;
+	    border-style: dashed;
+	    border-color: rgb(0, 0, 0);
+	    border-image: initial;
+	    border-radius: 0;
+	    margin: 20px;
+	    -webkit-appearance: none;
+	    -webkit-border-radius: 0px;
+	    outline-width: 0;
+	    padding: 10px 10px 10px 5px;
+	    display: block;
+	    width: 10em;
+	    display: inline-block;
+	}
+
+	.blackandwhite {
+	    background-image: url('../img/tiger.gif');
+	}
+
+	.gamer {
+	    background-image: url('../img/gamer.png');
+	}
+
+	.classic{
+	    background-image: url('../img/classic.png');
+	}
+
+	.flipped {
+	    pointer-events: none;
+	}
+
 	.cardOk {
 	    height: 230px;
 	    width: 170px;
 	    color:white;
 	    font-size: 24px;
-		background-color: black;
-		margin: auto;
-		display: inline-block;
+	    margin: auto;
+	    display: inline-block;
 	    margin-right: 50px;
 	    margin-bottom: 40px;
 	    cursor: pointer;
@@ -34,6 +98,7 @@
 	    background-repeat: no-repeat;
 	    background-position: center center;
 	    margin-left: 50px;
+	    transform: rotateY(180deg);
 	}
 	.bottommarg {
 		margin-bottom: 10px;
@@ -56,58 +121,17 @@
 		color: white;
 		pointer-events: none;
 	}
-	[data-card="1"].image, [data-card="1"].cardOk  {
-  		background-image: url('../img/1.jpg');
-	}
-	[data-card="2"].image, [data-card="2"].cardOk  {
-  		background-image: url('../img/2.jpg');
-	}
-	[data-card="3"].image, [data-card="3"].cardOk  {
-  		background-image: url('../img/3.jpg');
-	}
-	[data-card="4"].image, [data-card="4"].cardOk  {
-  		background-image: url('../img/4.jpg');
-	}
-	[data-card="5"].image, [data-card="5"].cardOk  {
-  		background-image: url('../img/5.jpg');
-	}
-	[data-card="6"].image, [data-card="6"].cardOk {
-  		background-image: url('../img/6.jpg');
-	}
-	[data-card="7"].image, [data-card="7"].cardOk {
-  		background-image: url('../img/7.jpg');
-	}
-	[data-card="8"].image, [data-card="8"].cardOk {
-  		background-image: url('../img/8.jpg');
-	}
-	[data-card="9"].image, [data-card="9"].cardOk {
-  		background-image: url('../img/9.jpg');
-	}
-	[data-card="10"].image, [data-card="10"].cardOk {
-  		background-image: url('../img/10.jpg');
-	}
-	[data-card="11"].image, [data-card="11"].cardOk {
-  		background-image: url('../img/11.jpg');
-	}
-	[data-card="12"].image, [data-card="12"].cardOk {
-  		background-image: url('../img/12.jpg');
-	}
 
 
-.transition {
-	transform: rotateY(180deg);
-}
+	.transition {
+		transform: rotateY(180deg);
+	}
 
-#overlay {
-width: 100%;
-height: 2000px;
-    position: absolute;
-    z-index: 999;
-}
-
-#youWin {
-	width: 100%;
-	height: 2000px;
-    position: absolute;
-    z-index: 999;
-}
+	#youWin {
+		width: 100%;
+		height: 100vh;
+	    position: absolute;
+	    z-index: 999;
+	    background-color: rgba(96, 125, 139, 0.53);
+	    text-align: center;
+	}
