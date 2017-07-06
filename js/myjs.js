@@ -1,4 +1,5 @@
 var MemoryGame = {};
+
 	//Global vars.
 	var cardBackValue = 'blackandwhite';
 	var buttons = document.getElementsByClassName('buttons');
@@ -7,8 +8,8 @@ var MemoryGame = {};
 	var winning = document.getElementById('youWin');
 	var backSelector = document.getElementById("cardbackSelector");
 	var themeSelector = document.getElementById("themeSelector");
+	var themeValue = 'art';
 
-MemoryGame.themeValue = 'art';
 MemoryGame.myArray = [];
 MemoryGame.clickCounter = 1;
 MemoryGame.guesss = [];
@@ -16,7 +17,7 @@ MemoryGame.data = '';
 MemoryGame.data2 = '';
 MemoryGame.firstItem = '';
 MemoryGame.secondItem = '';
-MemoryGame.failCounter = 0;
+var failCounter = 0;
 
 // Card holder Object
 MemoryGame.Cards = function (data, div) {
@@ -37,8 +38,8 @@ MemoryGame.constructCards = function (num){
 	winning.style.display = 'none';
 	document.body.style.overflow = "scroll";
 	MemoryGame.myArray = [];
-	MemoryGame.failCounter = 0;
-	document.getElementById('failcounter').innerHTML = MemoryGame.failCounter;
+	failCounter = 0;
+	document.getElementById('failcounter').innerHTML = failCounter;
 		console.log(allCardDivs);
 			for (var m = 1; m<= num; m++){
 				MemoryGame.cardDivs = document.createElement('div');
@@ -75,9 +76,9 @@ MemoryGame.appenedShuffledCards = function  () {
 
 // Changing card backs
 MemoryGame.changeBacks = function () {
-	MemoryGame.allCards = document.getElementsByClassName('card');
+		MemoryGame.allCards = document.getElementsByClassName('card');
 		cardBackValue = backSelector.options[backSelector.selectedIndex].value;
-
+		console.log(cardBackValue);
 		for (var i = 0; i < MemoryGame.allCards.length ; i++ ){
 			MemoryGame.allCards[i].className = ('card');
 			MemoryGame.allCards[i].classList.add(cardBackValue);
@@ -98,7 +99,7 @@ MemoryGame.userInput = function () {
 	    MemoryGame.firstItem = event.target;
 	    MemoryGame.firstItem.classList.add('transition' , 'flipped');
 	    MemoryGame.themeValue = themeSelector.options[themeSelector.selectedIndex].value;
-		MemoryGame.firstItem.style.backgroundImage = "url('./img/" + MemoryGame.themeValue +"/"+ MemoryGame.data +".jpg')";
+		MemoryGame.firstItem.style.backgroundImage = "url('./img/" + themeValue +"/"+ MemoryGame.data +".jpg')";
 
 		MemoryGame.Card1 = new MemoryGame.Cards (MemoryGame.data,MemoryGame.firstItem); 
 	    MemoryGame.guesss.push(MemoryGame.Card1);
@@ -111,7 +112,7 @@ MemoryGame.userInput = function () {
 		MemoryGame.secondItem = event.target;
 		MemoryGame.secondItem.classList.add('transition', 'flipped');
 	    MemoryGame.themeValue = themeSelector.options[themeSelector.selectedIndex].value;
-		MemoryGame.secondItem.style.backgroundImage = "url('./img/" + MemoryGame.themeValue +"/"+ MemoryGame.data2 +".jpg')";
+		MemoryGame.secondItem.style.backgroundImage = "url('./img/" + themeValue +"/"+ MemoryGame.data2 +".jpg')";
 
 		MemoryGame.Card2 = new MemoryGame.Cards(MemoryGame.data2,MemoryGame.secondItem);
 		MemoryGame.guesss.push(MemoryGame.Card2);
@@ -127,7 +128,7 @@ MemoryGame.finalCheck = function () {
 				MemoryGame.guesss[1].div.className = 'cardOk';
 			} else {
 				console.log('try again');
-				MemoryGame.failCounter++;
+				failCounter++;
 				MemoryGame.guesss[0].div.style.backgroundImage = "";
 				MemoryGame.guesss[1].div.style.backgroundImage = "";
 				MemoryGame.guesss[0].div.classList.remove("transition" , "flipped");
@@ -147,6 +148,12 @@ MemoryGame.finalCheck = function () {
 		MemoryGame.data2 = '';
 		MemoryGame.firstItem = '';
 		MemoryGame.secondItem = '';
-			localStorage.setItem('tryouts', MemoryGame.failCounter);
-			document.getElementById('failcounter').innerHTML = MemoryGame.failCounter;
+			localStorage.setItem('tryouts', failCounter);
+			console.log("fail", failCounter)
+	document.getElementById('failcounter').innerHTML = failCounter + '';
 	}
+
+document.getElementById('again').addEventListener('click',function(){window.scrollTo(500, 0);document.body.style.overflow = "scroll";
+	winning.style.display = 'none';
+	MemoryGame.constructCards();})
+
