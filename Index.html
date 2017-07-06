@@ -12,27 +12,8 @@
 
 <body id="body">
 	<div id='youWin' style="display: none">
-			<div class="col-md-12 text-center" style="z-index: 999">
-				<h3 class="title">Memmory Game of Mine</h3>
-				<button onclick="MemoryGame.difficulty(6);" class="btn buttons" >Easy</button>
-				<button onclick="MemoryGame.difficulty(9);" class="btn buttons" >Medium</button>
-				<button onclick="MemoryGame.difficulty(12);" class="btn buttons" >Hard</button>
-				<span style="margin-left: 15px">Fail Counter: </span><span id="failcounter">0</span>
-				<select id="cardbackSelector" onchange="MemoryGame.changeBacks();">
-					<option value="blackandwhite">&#8595; Card Backs &#8595;</option>
-					<option value="blackandwhite">Black and White</option>
-					<option value="classic">Classic</option>
-					<option value="gamer">Gamer</option>
-				</select>
-
-				<select style="margin-left: 15px" id="themeSelector">
-					<option value="art">&#8595; Game Theme &#8595;</option>
-					<option value="art">Art</option>
-					<option value="animals">Animals</option>
-					<option value="planets">Planets</option>
-				</select>
-			</div>
-			<h3>YOU WON!</h3>
+		<h3 style="margin-top: 150px;font-size: 35px">YOU WON!</h3>
+		<button id="again" class="btn" style="margin-top: 20px">Play Again</button>
 	</div>
 
 	<div id="contain" class="container-fluid text-center allin" >
