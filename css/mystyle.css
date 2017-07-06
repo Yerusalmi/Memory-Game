@@ -1,4 +1,4 @@
-	  .card {
+.card {
 	    height: 230px;
 	    width: 170px;
 	    color:white;
@@ -15,12 +15,13 @@
 	    margin-left: 50px;
 	    transform: rotateY(0deg);
 	    transition: all 0.8s ease;
+	    
 	}
 
 	#failcounter {
 	    margin-left: 15px;
-    	    margin-right: 15px;
-    	    font-size: 22px;
+    	margin-right: 15px;
+    	font-size: 22px;
 	}
 
 	#cardbackSelector {
@@ -41,7 +42,7 @@
 	}
 
 	.btn {
-	    background-color: white;
+		background-color: white;
 	    border: dashed;
 	    border-width: 1px;
 	    padding: 12px;
@@ -80,7 +81,7 @@
 	}
 
 	.flipped {
-	    pointer-events: none;
+		pointer-events: none;
 	}
 
 	.cardOk {
@@ -88,8 +89,8 @@
 	    width: 170px;
 	    color:white;
 	    font-size: 24px;
-	    margin: auto;
-	    display: inline-block;
+		margin: auto;
+		display: inline-block;
 	    margin-right: 50px;
 	    margin-bottom: 40px;
 	    cursor: pointer;
